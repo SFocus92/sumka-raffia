@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { bags } from "@/data";
 
+const B = "/sumka-raffia";
+
 /* ---------- header ---------- */
 
 const links = [
@@ -72,7 +74,7 @@ function Hero() {
     <section className="hero" id="top">
       <div className="hero-bg">
         {/* Photo by Mohamed Nuzrath on Unsplash */}
-        <img src="/hero-main.jpg" alt="" />
+        <img src={`${B}/hero-main.jpg`} alt="" />
       </div>
       <div className="container hero-inner">
         <div className="hero-text">
@@ -109,7 +111,7 @@ function Hero() {
           </div>
         </div>
         <div className="hero-visual">
-          <img className="hero-photo" src="/bag-light.jpg" alt="Светлая сумка из рафии" />
+          <img className="hero-photo" src={`${B}/bag-light.jpg`} alt="Светлая сумка из рафии" />
           <div className="hero-badge">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
               <path
@@ -175,7 +177,7 @@ function Collection({ onOrder }: { onOrder: (bag?: string) => void }) {
               <div className={`bag-status${bag.available ? " available" : ""}`}>
                 {bag.available ? "В наличии" : "Под заказ"}
               </div>
-              <img src={bag.image} alt={bag.name} />
+              <img src={`${B}${bag.image}`} alt={bag.name} />
             </div>
             <div className="bag-body">
               <h3 className="bag-name">{bag.name}</h3>
@@ -250,8 +252,8 @@ function Craft() {
     <section className="section craft" id="craft">
       <div className="container craft-inner">
         <div className="craft-media reveal">
-          <img className="craft-photo" src="/bag-brown.jpg" alt="Коричневая сумка из рафии" />
-          <img className="craft-photo-small" src="/craft.jpg" alt="Процесс вязки" />
+          <img className="craft-photo" src={`${B}/bag-brown.jpg`} alt="Коричневая сумка из рафии" />
+          <img className="craft-photo-small" src={`${B}/craft.jpg`} alt="Процесс вязки" />
         </div>
         <div className="craft-text reveal">
           <div className="section-tag">О мастерской</div>
@@ -388,7 +390,7 @@ function Care() {
 /* ---------- gallery ---------- */
 
 function Gallery() {
-  const photos = ["/beach.jpg", "/sunset.jpg", "/woman.jpg", "/bag-light.jpg", "/bag-brown.jpg", "/hero-bg.jpg"];
+  const photos = [`${B}/beach.jpg`, `${B}/sunset.jpg`, `${B}/woman.jpg`, `${B}/bag-light.jpg`, `${B}/bag-brown.jpg`, `${B}/hero-bg.jpg`];
   return (
     <section className="section container">
       <div className="reveal">
