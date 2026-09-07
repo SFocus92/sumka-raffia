@@ -74,7 +74,7 @@ function Hero() {
     <section className="hero" id="top">
       <div className="hero-bg">
         {/* Photo by Mohamed Nuzrath on Unsplash */}
-        <img src={`${B}/hero-main.jpg`} alt="" />
+        <img src={`${B}/straw-bags.jpg`} alt="" />
       </div>
       <div className="container hero-inner">
         <div className="hero-text">
@@ -253,7 +253,7 @@ function Craft() {
       <div className="container craft-inner">
         <div className="craft-media reveal">
           <img className="craft-photo" src={`${B}/bag-brown.jpg`} alt="Коричневая сумка из рафии" />
-          <img className="craft-photo-small" src={`${B}/craft.jpg`} alt="Процесс вязки" />
+          <img className="craft-photo-small" src={`${B}/crochet-closeup.jpg`} alt="Процесс вязки" />
         </div>
         <div className="craft-text reveal">
           <div className="section-tag">О мастерской</div>
@@ -390,7 +390,7 @@ function Care() {
 /* ---------- gallery ---------- */
 
 function Gallery() {
-  const photos = [`${B}/beach.jpg`, `${B}/sunset.jpg`, `${B}/woman.jpg`, `${B}/bag-light.jpg`, `${B}/bag-brown.jpg`, `${B}/hero-bg.jpg`];
+  const photos = [`${B}/straw-bags.jpg`, `${B}/beach-bag.jpg`, `${B}/crochet-closeup.jpg`, `${B}/bag-light.jpg`, `${B}/bag-brown.jpg`, `${B}/tote.jpg`];
   return (
     <section className="section container">
       <div className="reveal">
