@@ -502,7 +502,7 @@ function Footer() {
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Связаться</div>
-            <a href="https://t.me/username" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/Irina_Persik" target="_blank" rel="noopener noreferrer">
               Telegram
             </a>
             <a href="https://wa.me/70000000000" target="_blank" rel="noopener noreferrer">
