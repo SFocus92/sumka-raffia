@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Raffia Atelier — лендинг вязаных сумок из рафии
 
-## Getting Started
+Сайт: **https://sfocus92.github.io/sumka-raffia/**
 
-First, run the development server:
+Next.js 16 (App Router) + React 19 + Tailwind 4, статическая сборка (`output: "export"`) для GitHub Pages.
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000/sumka-raffia
+npm run check    # типы + линтер + продакшн-сборка в ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Деплой
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Каждый push в `main` запускает GitHub Actions (`.github/workflows/deploy.yml`): проверка типов, линтер, сборка и публикация на GitHub Pages.
+В настройках репозитория: **Settings → Pages → Source: GitHub Actions**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Настройки
 
-## Learn More
+Необязательные переменные (локально — в `.env.local`, на GitHub — **Settings → Secrets and variables → Actions → Variables**), см. `.env.example`:
 
-To learn more about Next.js, take a look at the following resources:
+| Переменная | Назначение |
+| --- | --- |
+| `NEXT_PUBLIC_WHATSAPP` | Номер WhatsApp. Если задан — на сайте появятся ссылки на WhatsApp |
+| `NEXT_PUBLIC_ORDER_ENDPOINT` | URL обработчика форм (Formspree, Web3Forms и т. п.). Без него заявка открывается в Telegram с готовым текстом |
+| `NEXT_PUBLIC_SITE_URL` | Публичный адрес (SEO, Open Graph, sitemap) |
+| `NEXT_PUBLIC_BASE_PATH` | Подпуть сайта (`/sumka-raffia`; для своего домена — пусто) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Контент
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Модели, цены, FAQ, лукбук, контакты — `src/data.ts`
+- Фото — `public/images/` (сжатые JPEG до 1600 px). `bag-light.jpg` и `bag-brown.jpg` — собственные фото изделий, остальные — бесплатные фото с Pexels (лицензия Pexels, без обязательной атрибуции).
